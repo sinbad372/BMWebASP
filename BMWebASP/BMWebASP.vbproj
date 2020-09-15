@@ -94,10 +94,26 @@
     <Import Include="System.Web.UI.HtmlControls" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BMSupervisor.aspx" />
+    <Content Include="BMWebMain.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BMSupervisor.aspx.designer.vb">
+      <DependentUpon>BMSupervisor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BMSupervisor.aspx.vb">
+      <DependentUpon>BMSupervisor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BMWebMain.aspx.designer.vb">
+      <DependentUpon>BMWebMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BMWebMain.aspx.vb">
+      <DependentUpon>BMWebMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
