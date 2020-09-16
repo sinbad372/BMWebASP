@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="BMWebMain.aspx.vb" Inherits="BMWeb.BMWebMain" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="BMWebMain.aspx.vb" Inherits="BMWebASP.BMWebMain" %>
 
 <!DOCTYPE html>
 

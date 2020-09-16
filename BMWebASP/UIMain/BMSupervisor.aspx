@@ -1,4 +1,4 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="BMSupervisor.aspx.vb" Inherits="BMWeb.BMSupervisor" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="BMSupervisor.aspx.vb" Inherits="BMWebASP.BMSupervisor" %>
 
 <!DOCTYPE html>
 
