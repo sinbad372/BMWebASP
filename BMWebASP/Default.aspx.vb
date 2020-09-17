@@ -4,12 +4,16 @@
     Private TAEmployees As New BMDataSetTableAdapters.EmployeesTableAdapter
 
     Protected Sub BMLogin_Authenticate(sender As Object, e As AuthenticateEventArgs) Handles BMLogin.Authenticate
-        If FireCurrentUser(BMLogin.UserName, BMLogin.Password) Then
-            e.Authenticated = True
-            Response.Redirect("UIMain\BMWebMain.aspx")
-        Else
-            e.Authenticated = False
-        End If
+        Try
+            If FireCurrentUser(BMLogin.UserName, BMLogin.Password) Then
+                e.Authenticated = True
+            Else
+                e.Authenticated = False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message,, "BM")
+        End Try
+        If e.Authenticated Then Response.Redirect("~/UIMain/BMWebMain.aspx")
     End Sub
     Private Function FireCurrentUser(ByVal strEmpID As String, ByVal strEmpPass As String) As Boolean
         Try
@@ -25,11 +29,11 @@
                 CurrentUser.EmpID = rsA.Rows(0).Item("EmpID")
                 CurrentUser.EmpName = rsA.Rows(0).Item("EmpName").ToString
                 CurrentUser.EmpJob = rsA.Rows(0).Item("EmpJob").ToString
-                CurrentUser.UserLevel = rsA.Rows(0).Item("UserLevel").ToString
+                CurrentUser.UserLevel = rsA.Rows(0).Item("LevelName").ToString
                 Return True
             End If
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.Message,, "BM")
             Return False
         End Try
     End Function
